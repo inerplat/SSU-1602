@@ -1,7 +1,7 @@
 /*
-ÀÛ¼ºÀÚ : ±èµ¿Çö
-ÀÛ¼ºÀÏ : 2016-09-27
-ÇÁ·Î±×·¥¸í : ´Ş·¯¸¦ ¿øÈ­·Î ¹Ù²Ù´Â ÇÁ·Î±×·¥
+ì‘ì„±ì : ê¹€ë™í˜„
+ì‘ì„±ì¼ : 2016-09-27
+í”„ë¡œê·¸ë¨ëª… : ë‹¬ëŸ¬ë¥¼ ì›í™”ë¡œ ë°”ê¾¸ëŠ” í”„ë¡œê·¸ë¨
 */
 /*
 #pragma warning (disable : 4996)
@@ -10,10 +10,10 @@
 int main()
 {
 	int usd,krw;
-	printf("´Ş·¯ : ");
+	printf("ë‹¬ëŸ¬ : ");
 	scanf("%d",&usd);
 	krw=usd*ex_rate;
-	printf("%d´Ş·¯´Â %d¿ø ÀÔ´Ï´Ù.\n",usd,krw);
+	printf("%dë‹¬ëŸ¬ëŠ” %dì› ì…ë‹ˆë‹¤.\n",usd,krw);
 	return 0;
 }
 */
@@ -51,9 +51,9 @@ int main()
 {
 	const months=12;
 	pay year;
-	printf("¿ù±ŞÀ» ÀÔ·ÂÇÏ¼¼¿ä : ");
+	printf("ì›”ê¸‰ì„ ì…ë ¥í•˜ì„¸ìš” : ");
 	scanf("%d",&year.m_salary);
 	year.y_salary=year.m_salary*months;
-	printf("¿¬ºÀÀº %d¿ø ÀÔ´Ï´Ù.\n",year.y_salary);
+	printf("ì—°ë´‰ì€ %dì› ì…ë‹ˆë‹¤.\n",year.y_salary);
 	return 0;
 }
