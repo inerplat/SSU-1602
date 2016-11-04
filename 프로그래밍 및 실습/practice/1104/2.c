@@ -1,28 +1,12 @@
-#include <stdoi.h>
-double larger_of(double x, double y)
+#include <stdio.h>
+int f(int n)
 {
-
-}
-
-void side_effect(void)
-{
-}
-
-int f(void)
-{
-	return 10 + 20;
-}
-
-void g(int x, int y)
-{
-	return;
-}
-
-double h(double x, int y)
-{
-	return 1.0;
+	int i, result = 0;
+	for (i = 1; i <= n; i++) result += i;
+	return  result;
 }
 int main()
 {
+	printf("1부터 10까지의합은 %d입니다.",f(10));
 	return 0;
 }
