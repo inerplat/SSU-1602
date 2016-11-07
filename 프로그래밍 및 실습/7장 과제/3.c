@@ -1,5 +1,4 @@
 #include <stdio.h>
-int arr[110];
 int ipower(int x,int y)
 {
 	int i,r=1;
