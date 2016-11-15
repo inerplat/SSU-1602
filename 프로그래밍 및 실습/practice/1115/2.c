@@ -3,6 +3,7 @@
 int main()
 {
 	int i;
+	//int grade[5];
 	int *grade=(int *) malloc(sizeof(int)*5);
 	for (i = 0; i <= 4; i++)
 	{
