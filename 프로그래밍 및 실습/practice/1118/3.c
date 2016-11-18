@@ -18,6 +18,10 @@ int main()
 		++freq[score];
 	}
 	printf(" 값\t빈도\n");
-	for (i = 0; i < SIZE; i++) printf("%3d\t%3d\n", i, freq[i]);
+	for (i = 0; i < SIZE; i++)
+	{
+		if (!freq[i]) continue;
+		printf("%3d\t%3d\n", i, freq[i]);
+	}
 	return 0;
 }
