@@ -9,7 +9,12 @@ int main()
 	{
 		printf("숫자를 입력하시오(종료 : -1) : ");
 		scanf("%d", &score);
-		if (score < 0) break;
+		if ((score > 100 || score < 0) && score != -1)
+		{
+			printf("잘못된 숫자를 입력하셨습니다.\n\n");
+			continue;
+		}
+		else if(score==-1) break;
 		++freq[score];
 	}
 	printf(" 값\t빈도\n");
