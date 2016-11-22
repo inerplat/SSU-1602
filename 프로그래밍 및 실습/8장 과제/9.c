@@ -102,6 +102,12 @@ int main()
 			--player;
 			continue;
 		}
+		if(r>2 || c>2 || r<0 || c<0)
+		{
+			printf("잘못된 좌표를 입력하셨습니다.\n");
+			--player;
+			continue;
+		}
 		a[r][c]=player;
 		if(t=check_arr()) break;
 		print_game();
