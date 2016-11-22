@@ -7,7 +7,7 @@ int main()
 	for (i = 0; i < 3; i++) for (j = 0; j < 5; j++) arr[i][j] = cnt++;
 	for (i = 0; i < 3; i++)
 	{
-		for (j = 0; j < 5; j++) printf("%d ", arr[i][j]);
+		for (j = 0; j < 5; j++) printf("%2d ", arr[i][j]);
 		printf("\n");
 	}
 	return 0;
