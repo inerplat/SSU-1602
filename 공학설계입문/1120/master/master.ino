@@ -8,31 +8,8 @@ int i;
 void setup() {
   Wire.begin(); // Wire 라이브러리 초기화
   Serial.begin(9600); // 직렬 통신 초기화
-  Serial.println("I2C");
-}
-void loop() {
-  if(mode==1)
-  {
-    i2c_communication2(); // 슬레이브로 데이터 요구 및 수신 데이터 처리
-    delay(1000);
-  }
-  else if(mode==2)
-  {
-    i2c_communication();
-    delay(1000);
-  }
-  else if(mode==3)
-  {
-    book[book_coord-'A']=book_name;
-    mode=1;
-    for(i=0;i<=26;i++)
-    {
-      Serial.print(book[i]);
-      Serial.println(" ");
-    }
-  }
-  Serial.print("mode=");
-  Serial.println(mode);
+  Serial.println("I2C");  
+  pinMode(2,INPUT_PULLUP);
 }
 void i2c_communication() {
   //스위치 인식
@@ -60,5 +37,45 @@ void i2c_communication2() {
     c2='0';
     mode=2;
   }
+}
+
+void loop() {
+  if(digitalRead(2) == LOW)
+  {
+    Serial.println("Input the title of book");
+    if(Serial.available())
+    {
+      char cTemp = Serial.read();
+      for(i=0;i<26;i++)
+      {
+        if(book[i]==cTemp)
+        {
+          Serial.write(i+'A');
+        }
+      }
+    }
+  }
+  if(mode==1)
+  {
+    i2c_communication2(); // 슬레이브로 데이터 요구 및 수신 데이터 처리
+    delay(1000);
+  }
+  else if(mode==2)
+  {
+    i2c_communication();
+    delay(1000);
+  }
+  else if(mode==3)
+  {
+    book[book_coord-'A']=book_name;
+    mode=1;
+    for(i=0;i<=26;i++)
+    {
+      Serial.print(book[i]);
+      Serial.println(" ");
+    }
+  }
+  Serial.print("mode=");
+  Serial.println(mode);
 }
 
