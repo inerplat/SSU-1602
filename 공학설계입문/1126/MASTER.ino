@@ -9,7 +9,7 @@ int tmp;
 int latch = 2;
 int msg_cnt=0;
 int clock = 3;
-
+int sw_cnt=0;
 int data = 4;
 void setup() {
   pinMode(latch, OUTPUT);
@@ -52,11 +52,11 @@ void loop() {
 
   if(digitalRead(5) == LOW)
   {
-     Serial.println("Please search for the book that you want");
+    if((++sw_cnt)<=1) Serial.println("Please search for the book that you want");
       mode=5;
   }
 
-
+  sw_cnt=0;
 
   if(mode==1)
   {
