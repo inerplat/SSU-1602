@@ -79,15 +79,13 @@ void loop()
           Serial.println(checksum1,BIN);
            
             // Should really check all pairs, but for now we'll just use the first
-            if(str[4] == 20)                      //RFID 태그의 ID값이 224번이면 Gil Dong의 카드
+            if(str[4] == 20) 
             {
-                Serial.print("Hello Gil Dong!\n");
                 c='a';
                 str[4]=0;
                 delay(1000);
             } 
-            else if(str[4] == 31) {             //RFID 태그의 ID값이 170번이면 Kang Min의 카드
-                Serial.print("Hello Kang Min!\n");
+            else if(str[4] == 31) {
                 c='b';
                 str[4]=0;
                 delay(1000);
