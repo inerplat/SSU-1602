@@ -100,8 +100,7 @@ void loop() {
     digitalWrite(A0,HIGH);
     if(digitalRead(6) == LOW)
     {
-      book[0][0]+=1;
-      book[0][book[0][0]]=book_name;
+      book[0][++book[0][0]]=book_name;
       mode=4;
       Serial.println("BOOK!");
       delay(100);
@@ -109,50 +108,43 @@ void loop() {
     }
     else if(digitalRead(7) == LOW)
     {
-      book[1][0]+=1;
-      book[1][book[1][0]]=book_name;
+      book[1][++book[1][0]]=book_name;
       mode=4;
       msg_cnt=0;
     }
     else if(digitalRead(8) == LOW)
     {
-      book[2][0]+=1;
-      book[2][book[2][0]]=book_name;
+      book[2][++book[2][0]]=book_name;
       mode=4;
       msg_cnt=0;
     }
     else if(digitalRead(9) == LOW)
     {
-      book[3][0]+=1;
-      book[3][book[3][0]]=book_name;
+      book[3][++book[3][0]]=book_name;
       mode=4;
       msg_cnt=0;
     }
     else if(digitalRead(10) == LOW)
     {
-      book[4][0]+=1;
-      book[4][book[4][0]]=book_name;
+      book[4][++book[4][0]]=book_name;
       mode=4;
       msg_cnt=0;
     }
     else if(digitalRead(11) == LOW)
     {
-      book[5][0]+=1;
-      book[5][book[5][0]]=book_name;
+      book[5][++book[5][0]]=book_name;
       mode=4;
       msg_cnt=0;
     }
     else if(digitalRead(12) == LOW)
     {
-      book[6][0]+=1;
-      book[6][book[6][0]]=book_name;
+      book[6][++book[6][0]]=book_name;
       mode=4;
       msg_cnt=0;
     }
     else if(digitalRead(13) == LOW)
     {
-      book[7][0]+=1;
-      book[7][book[7][0]]=book_name;
+      book[7][++book[7][0]]=book_name;
       mode=4;
       msg_cnt=0;
     }
