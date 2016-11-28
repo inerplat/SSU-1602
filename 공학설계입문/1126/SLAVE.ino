@@ -1,3 +1,5 @@
+#include <NAxisMotion.h>
+
 #include <AddicoreRFID.h>
 #include <SPI.h>
 #include <Wire.h>
@@ -51,7 +53,6 @@ void loop()
     status = myRFID.AddicoreRFID_Request(PICC_REQIDL, str);    
     if (status == MI_OK)    //MIFARE 카드일때만 작동
     {
-          tone(speakerPin,2000,100);
           Serial.println("RFID tag detected");
             Serial.print(str[0],BIN);
           Serial.print(" , ");
@@ -77,18 +78,17 @@ void loop()
             Serial.print(str[4],BIN);
           Serial.print(" , ");
           Serial.println(checksum1,BIN);
-           
             // Should really check all pairs, but for now we'll just use the first
             if(str[4] == 20) 
             {
                 c='a';
                 str[4]=0;
-                delay(1000);
+                tone(A3,1760,100);
             } 
             else if(str[4] == 31) {
                 c='b';
                 str[4]=0;
-                delay(1000);
+                tone(A3,1760,100);
             }
             Serial.println();
             delay(1000);
@@ -98,5 +98,6 @@ void loop()
 
 void sendToMaster() {
   Wire.write(c);
+
   c='0';
 }
