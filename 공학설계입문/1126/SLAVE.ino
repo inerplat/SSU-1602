@@ -1,5 +1,3 @@
-#include <NAxisMotion.h>
-
 #include <AddicoreRFID.h>
 #include <SPI.h>
 #include <Wire.h>
