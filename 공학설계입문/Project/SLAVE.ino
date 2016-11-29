@@ -77,14 +77,54 @@ void loop()
           Serial.print(" , ");
           Serial.println(checksum1,BIN);
             // Should really check all pairs, but for now we'll just use the first
-            if(str[4] == 20) 
+            if(str[4] == 20 || str[4]==250) 
             {
                 c='a';
                 str[4]=0;
                 tone(A3,1760,100);
             } 
-            else if(str[4] == 31) {
+            else if(str[4] == 31 || str[4]==229) {
                 c='b';
+                str[4]=0;
+                tone(A3,1760,100);
+            } 
+            else if(str[4] == 224) {
+                c='c';
+                str[4]=0;
+                tone(A3,1760,100);
+            } 
+            else if(str[4] == 235) {
+                c='d';
+                str[4]=0;
+                tone(A3,1760,100);
+            } 
+            else if(str[4] == 16) {
+                c='e';
+                str[4]=0;
+                tone(A3,1760,100);
+            } 
+            else if(str[4] == 21) {
+                c='f';
+                str[4]=0;
+                tone(A3,1760,100);
+            } 
+            else if(str[4] == 26) {
+                c='g';
+                str[4]=0;
+                tone(A3,1760,100);
+            } 
+            else if(str[4] == 0) {
+                c='h';
+                str[4]=0;
+                tone(A3,1760,100);
+            } 
+            else if(str[4] == 4) {
+                c='i';
+                str[4]=0;
+                tone(A3,1760,100);
+            } 
+            else if(str[4] == 30) {
+                c='j';
                 str[4]=0;
                 tone(A3,1760,100);
             }
