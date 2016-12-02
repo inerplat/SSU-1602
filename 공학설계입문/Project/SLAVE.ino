@@ -118,6 +118,51 @@ void loop()
 			c = 'j';
 			str[4] = 0;
 			tone(A3, 1760, 100);
+		
+		else if (str[4] == 27) {
+			c = 'k';
+			str[4] = 0;
+			tone(A3, 1760, 100);
+		}
+		else if (str[4] == 20) {
+			c = 'l';
+			str[4] = 0;
+			tone(A3, 1760, 100);
+		}
+		else if (str[4] == 238) {
+			c = 'm';
+			str[4] = 0;
+			tone(A3, 1760, 100);
+		}
+		else if (str[4] == 225) {
+			c = 'n';
+			str[4] = 0;
+			tone(A3, 1760, 100);
+		}
+		else if (str[4] == 230) {
+			c = 'o';
+			str[4] = 0;
+			tone(A3, 1760, 100);
+		}
+		else if (str[4] == 251) {
+			c = 'p';
+			str[4] = 0;
+			tone(A3, 1760, 100);
+		}
+		else if (str[4] == 254) {
+			c = 'y';
+			str[4] = 0;
+			tone(A3, 1760, 100);
+		}
+		else if (str[4] == 252) {
+			c = 'r';
+			str[4] = 0;
+			tone(A3, 1760, 100);
+		}
+		else if (str[4] == 255) {
+			c = 's';
+			str[4] = 0;
+			tone(A3, 1760, 100);
 		}
 		Serial.println();
 		delay(1000);
