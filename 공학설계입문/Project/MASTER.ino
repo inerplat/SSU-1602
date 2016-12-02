@@ -7,28 +7,18 @@ int i,j,k;
 int book_name;
 int tmp;
 int latch = 2;
-int msg_cnt=0;
 int clock = 3;
-int sw_cnt=0;
 int data = 4;
+int msg_cnt=0;
+
 void setup() {
   pinMode(latch, OUTPUT);
-
   pinMode(clock, OUTPUT);
-
   pinMode(data, OUTPUT);
-  Wire.begin(); // Wire 라이브러리 초기화
-  Serial.begin(9600); // 직렬 통신 초기화
+  Wire.begin();
+  Serial.begin(9600);
   Serial.println("Hanzo");
-  pinMode(5,INPUT_PULLUP);
-  pinMode(6,INPUT_PULLUP);
-  pinMode(7,INPUT_PULLUP); 
-  pinMode(8,INPUT_PULLUP);
-  pinMode(9,INPUT_PULLUP);  
-  pinMode(10,INPUT_PULLUP);
-  pinMode(11,INPUT_PULLUP);  
-  pinMode(12,INPUT_PULLUP);
-  pinMode(13,INPUT_PULLUP);
+  for(i=5;i<=13;i++) pinMode(i,INPUT_PULLUP);
   pinMode(A0,OUTPUT);  
 }
 void i2c_communication2() {
@@ -50,13 +40,13 @@ void i2c_communication2() {
 
 void loop() {
 
-  if(digitalRead(5) == LOW)
+  if(digitalRead(5) == LOW && mode!=5)
   {
-    if((++sw_cnt)<=1) Serial.println("Please search for the book that you want");
+      Serial.println("Please search for the book that you want");
       mode=5;
   }
 
-  sw_cnt=0;
+
 
   if(mode==1)
   {
@@ -68,7 +58,7 @@ void loop() {
     }
     i2c_communication2(); // 슬레이브로 데이터 요구 및 수신 데이터 처리
 //    Serial.println(book_name);
-    delay(1000);
+    delay(300);
   }
   else if(mode==2)
   {
@@ -102,8 +92,6 @@ void loop() {
     {
       book[0][++book[0][0]]=book_name;
       mode=4;
-      Serial.println("BOOK!");
-      delay(100);
       msg_cnt=0;
     }
     else if(digitalRead(7) == LOW)
@@ -195,11 +183,11 @@ void loop() {
             digitalWrite(latch, LOW);
             shiftOut(data, clock, MSBFIRST, 0);
             digitalWrite(latch, HIGH);
-            digitalWrite(A0,LOW);
+            digitalWrite(A0,LOW);   
+            msg_cnt=0;     
           }
          }
-       }   
-     msg_cnt=0;       
+       }  
      mode=1;
      }
   }
