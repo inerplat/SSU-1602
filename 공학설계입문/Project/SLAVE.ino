@@ -150,7 +150,7 @@ void loop()
 			tone(A3, 1760, 100);
 		}
 		else if (str[4] == 254) {
-			c = 'y';
+			c = 'q';
 			str[4] = 0;
 			tone(A3, 1760, 100);
 		}
